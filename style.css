@@ -52,6 +52,7 @@ header .container nav a
 header .container .hamb
 {
     display: none;
+    position: relative;
 }
  footer.seccion
  {
@@ -357,12 +358,12 @@ display: block;
 display: none;;
 }
 
-#contactanos
+#contactenos
 {
     position:relative;
 }
 
-#contactanos iframe
+#contactenos iframe
 {
     position: absolute;
     top: 0;
@@ -373,19 +374,19 @@ display: none;;
 
 }
 
-#contactanos form
+#contactenos form
 {
     padding: 60px;
     background-color: red;
 }
 
-#contactanos form .form-block
+#contactenos form .form-block
 {
 width: 100%;
 margin-bottom: 15px;
 }
 
-#contactanos form .form-block .form-control
+#contactenos form .form-block .form-control
 {
     display: block;
     height: 40px;
@@ -395,7 +396,7 @@ margin-bottom: 15px;
     padding: 5px 10px;
 
 }
-#contactanos form .form-block textarea
+#contactenos form .form-block textarea
 {
     display: block;
     height: 100px;
@@ -406,7 +407,7 @@ margin-bottom: 15px;
 
 }
 
-#contactanos form .form-block.bloque-ultimo
+#contactenos form .form-block.bloque-ultimo
 {
    margin-bottom: 0;
 
@@ -438,6 +439,11 @@ margin-bottom: 15px;
 
   }
 
+  header .container nav.open
+  {
+    transform: translateX(0);
+  }
+
   header .container nav a
   {
       font-size: 30px ;
@@ -450,6 +456,7 @@ margin-bottom: 15px;
       display:block;
       font-size: 40px;
       color: red;
+      
   }
 
   form .boton.boton-negro
@@ -513,11 +520,11 @@ width: 100%;
 margin-bottom: 15px;
 }
 
-#contactanos
+#contactenos
 {
     padding: 0;
 }
-#contactanos iframe
+#contactenos iframe
 {
     position: relative;
 }

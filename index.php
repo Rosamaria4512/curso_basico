@@ -114,7 +114,7 @@
             <section id="galeria">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="columna-33">
+                        <div class="columna-33 columna-mobile-50">
                             <div class="cuadrado-perfecto">
                                 <img src="img/servicio1.jpg">
                                 <h4>Imagen1</h4>
@@ -129,7 +129,7 @@
                             </div>
                             
                         </div>
-                        <div class="columna-33 columna-mobile-50">
+                        <div class="columna-33 columna-mobile-50 ">
                             <div class="cuadrado-perfecto">
                                 <img src="img/servicio3.jpg">
                                 <h4>Imagen3</h4>
@@ -161,7 +161,7 @@
                     </div>
                 </div>
             </section>
-            <section id="contactanos" class="seccion">
+            <section id="contactenos" class="seccion">
                 <iframe width="520" height="400" 
                 src="https://maps.google.com/maps?width=520&amp;
                  height=400&amp;hl=en&amp;q=%20Bogot%C3%A1+(colombia)&amp;
@@ -170,7 +170,7 @@
                     <div class="row">
                         <div class="columna columna-41 columna-mobile-100
                         empujar-58 empujar-mobile-0 sinpaddin-mobile">
-                            <form action="" method="post">
+                            <form action="index.php" method="post">
                                 <div class="form-block">
                                     <input type="text"  name="nombre"
                                      class="form-control" placeholder="Nombre">
@@ -184,8 +184,38 @@
                                 </div>
                                 <div class="form-block bloque-ultimo">
                                     <input type="submit" class="boton boton-negro" value="Enviar">
-                            </form>
+                            
                         </div>
+                        <?php
+
+                        if($_SERVER["REQUEST_METHOD"] =="POST")
+                        {
+                            $nombre = $_POST["nombre"];
+                            $email = $_POST["email"];
+                            $mensaje = $_POST["mensaje"];
+
+                            if(isset($nombre))
+                            {
+                                if(isset($email))
+                                {
+                                    if(isset($mensaje))
+                                    {
+                                        $para = "rmquilindo8@misena.edu.co";
+                                        $asunto = "esto es unaprueba";
+                                        $cuerpo = $nombre."\n". $email."\n".$mensaje;
+                                        $adicional = "From: rmquilindo8@misena.edu.co";
+
+                                        mail($para,$asunto,$cuerpo,$adicional);
+                                        ?>
+                                         <p>Envio exitoso</p>
+                                        <?php
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+                        
+                        </form>
                     </div>
                 </div>
             </section>
@@ -249,6 +279,9 @@
                 &copy; Derechos Reservados - 2022
             </div>
         </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/funciones.js"></script>
+
     </body>
 
 </html>
